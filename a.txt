@@ -1,0 +1,15 @@
+Day 1
+=======
+1. Typing speed real time easy
+2. Accuracy Basic(end, wrong) easy
+3. Input disable, when typed wrong easy
+
+Day 2
+=======
+4. Color characterwise
+5. input and check in same paragraph
+6. Design the cursor like ratatype
+
+Later
+=====
+7. Show results at the end (Design)

@@ -1,0 +1,13 @@
+.color-green {
+    position: relative;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: green;
+}
+
+.color-red {
+    position: relative;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: red;
+}
