@@ -41,7 +41,7 @@ function Home() {
       setHelperText("Ah! Mistake made");
     }
     
-    if (inputText[inputText.length-1] === text[text.length-1]) {
+    if (inputText[inputText.length-1] === text[text.length-1] && inputText.length === text.length ) {
       alert("U have completd the test");
     }
   };
