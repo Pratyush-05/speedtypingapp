@@ -1,0 +1,11 @@
+.input-text {
+  background-color: bisque;
+  text-align: left;
+  padding: 2rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+#outlined-multiline-flexible {
+  width: 40rem !important;
+}
