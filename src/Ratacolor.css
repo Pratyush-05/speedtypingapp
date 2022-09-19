@@ -1,13 +1,25 @@
-.color-green {
-    position: relative;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    background-color: green;
-}
 
-.color-red {
+.passed-text{
+    display: inline;
+    color: green;
+}
+.box{
     position: relative;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    padding: 5px;
+    width: 180px; height:auto;
+    cursor:pointer;
+}
+.tobe-passed{
+    display: inline;
+    color: black;
+}
+.wred {
+    display: inline;
+    color: black;
     background-color: red;
+}
+.wgreen {
+    color: black;
+    background-color: green;
+    display: inline;
 }

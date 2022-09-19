@@ -1,56 +1,41 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Ratacolor.css';
 
 function Ratatype() {
 
-    // const
-    const paragraph = "this is first line"
+    let s = "Although most people consider piranhas to be quite dangerous, they are, for the most part, entirely harmless. Piranhas rarely feed on large animals; they eat smaller fish and aquatic plants. When confronted with humans, piranhas’ first instinct is to flee, not attack. Their fear of humans makes sense. Far more piranhas are eaten by people than people are eaten by piranhas. If the fish are well-fed, they won’t bite humans.";
 
-    //state
-    const [color, setColor] = useState('color-green')
-    const [speed, setSpeed] = useState(0)
-    const [startTime, setStartTime] = useState(0)
-    const [wrongInputCount, setWrongInputCount] = useState(0)
-    const [rightInputCount, setRightInputCount] = useState(0)
-    const [isFirstInput, setIsFirstInput] = useState(false)
-    const [myvalue, setMyvalue] = useState()
+    const [charIndex, setCharIndex] = useState(0);
+    const [firstString, setFirstString] = useState("");
+    const [midString, setmidString] = useState("");
+    const [lastString, setlastString] = useState("");
+    const [colorFocusedChar, setColorFocusedChar] = useState("wgreen");
 
-    const inputChangeHandler = (event) => {
-        if (!isFirstInput) {
-            setIsFirstInput(true)
-            setStartTime(new Date())
+    const onKeyDownEventHandler = (event) => {
+        const currInput = event.key
+        if (currInput === s[charIndex]) {
+            // add green css for it
+            setColorFocusedChar("wgreen")
+            setCharIndex(charIndex + 1)
         }
-
-        const inputString = event.target.value
-        let inputLength = inputString.length
-
-
-
-        let isTypingCorrect = (paragraph.substring(0, inputLength) !== inputString) ? false : true;
-        isTypingCorrect ? setRightInputCount(rightInputCount + 1) : setWrongInputCount(wrongInputCount + 1)
-        isTypingCorrect ? setColor('color-green') : setColor('color-red');
-        isTypingCorrect && calculateSpeed(startTime, inputLength);
-        if (isTypingCorrect) {
-            setMyvalue(event.target.value)
+        else {
+            setColorFocusedChar("wred")
         }
-        
-
-
-    }
-    const calculateSpeed = (startTime, inputLength) => {
-        const currentTime = new Date()
-        const timeTaken = (currentTime - startTime) / 1000
-        setSpeed(parseInt((inputLength / timeTaken) * 12))
     }
 
+    useEffect(() => {
+        console.log(charIndex, "********")
+        setFirstString(s.slice(0, charIndex))
+        setmidString(s[charIndex])
+        setlastString(s.slice(charIndex + 1, s.length))
+    }, [charIndex])
+    return <div tabIndex="0" onKeyDown={onKeyDownEventHandler}>
+        <br />
+        <br />
 
-    return <div >
-
-        {paragraph}<br></br><br></br>
-        <input type="text" className={color} value={myvalue} onChange={inputChangeHandler} />
-        <br></br><br></br>
-        speed: {speed} WPM<br></br><br></br>
-        accuracy : {(parseInt((rightInputCount) / (rightInputCount + wrongInputCount) * 100)) || 100}
+        <div class="passed-text">{firstString}</div>
+        <div class={colorFocusedChar}>{midString}</div>
+        <div class="tobe-passed">{lastString}</div>
     </div>
 }
 export default Ratatype
