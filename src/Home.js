@@ -2,6 +2,7 @@ import * as React from "react";
 import "./Home.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import Home2 from "./Home2";
 
 function Home() {
   const [value, setValue] = React.useState("");
@@ -75,7 +76,7 @@ function Home() {
           fullWidth={true}
         />
       </Box>
-      <h3>Speed: {speed} ch/min</h3>
+      <h3>Speed: {Math.floor(speed/5.1)} wpm </h3>
       <h3>Accuracy: {accuracy} </h3>
     </div>
   );

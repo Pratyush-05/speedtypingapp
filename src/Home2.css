@@ -1,0 +1,24 @@
+.black{
+  color: black;
+}
+
+.current{
+  color: blue;
+}
+.current-wrong{
+  color: red;
+}
+
+.green{
+  color: green;
+}
+
+.maintext{
+  font-family: 'Roboto', sans-serif;
+  font-size:larger;
+  background-color:#caf0f8 ;
+  text-align: left;
+  padding: 2rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
